@@ -15,8 +15,8 @@ ROBOTSTXT_OBEY = False
 DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
 
 ITEM_PIPELINES = {
-   'nftscraping.pipelines.NftscrapingPipeline': 100,
-   'nftscraping.pipelines.EndpointPipeline': 200
+   'demo_scrape.pipelines.NftscrapingPipeline': 100,
+   'demo_scrape.pipelines.EndpointPipeline': 200
 }
 
 # Add Your ScrapeOps API Key
