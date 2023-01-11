@@ -15,7 +15,7 @@ ROBOTSTXT_OBEY = False
 DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
 
 ITEM_PIPELINES = {
-   'scrapy_demo.pipelines.NftscrapingPipeline': 100,
+   'scrapy_demo.pipelines.ScrapyDemoPipeline': 100,
    'scrapy_demo.pipelines.EndpointPipeline': 200
 }
 
