@@ -23,6 +23,6 @@ class EndpointPipeline:
             'datetime_posted':article['datetime_posted']
         }
         headers = {'Content-Type': 'application/json'}
-        r = requests.post('https://postman-echo.com/post', json=data, headers=headers)
+        r = requests.post('https://api.metaquants.xyz/v1/scraping', json=data, headers=headers)
         print(r.text)
         return article
