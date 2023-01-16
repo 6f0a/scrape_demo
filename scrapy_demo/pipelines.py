@@ -32,7 +32,7 @@ def get_secret():
         raise e
 
     # Decrypts secret using the associated KMS key.
-    return get_secret_value_response['SecretString']
+    return get_secret_value_response['SecretString']['API_KEY_METAQUANTS']
 
     # Your code goes here.
 
@@ -50,7 +50,7 @@ class EndpointPipeline:
             'collection': article['collection'],
             'datetime_posted':article['datetime_posted']
         }
-        headers = {'Content-Type': 'application/json', 'x-api-key': get_secret()['API_KEY_METAQUANTS']}
+        headers = {'Content-Type': 'application/json', 'x-api-key': get_secret()}
         r = requests.post('https://api.metaquants.xyz/v1/scraping', json=data, headers=headers)
         print(r.text)
         return article
