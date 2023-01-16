@@ -8,6 +8,7 @@
 from itemadapter import ItemAdapter
 import requests
 import boto3
+import json
 from botocore.exceptions import ClientError
 
 def get_secret():
@@ -31,8 +32,9 @@ def get_secret():
         # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
         raise e
 
-    # Decrypts secret using the associated KMS key.
-    return get_secret_value_response['SecretString']['API_KEY_METAQUANTS']
+     # Decrypts secret using the associated KMS key.
+    secret = json.loads(get_secret_value_response['SecretString'])
+    return secret['API_KEY_METAQUANTS']
 
     # Your code goes here.
 
