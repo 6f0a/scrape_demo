@@ -50,7 +50,7 @@ class EndpointPipeline:
             'collection': article['collection'],
             'datetime_posted':article['datetime_posted']
         }
-        headers = {'Content-Type': 'application/json', 'x-api-key': get_secret()}
+        headers = {'Content-Type': 'application/json', 'x-api-key': get_secret()['API_KEY_METAQUANTS']}
         r = requests.post('https://api.metaquants.xyz/v1/scraping', json=data, headers=headers)
         print(r.text)
         return article
