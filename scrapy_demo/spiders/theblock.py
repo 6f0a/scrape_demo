@@ -29,4 +29,5 @@ class TheblockSpider(scrapy.Spider):
         article['datetime_crawled'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         article['collection'] = collection
         article['datetime_posted'] = (''.join(response.xpath('//div[@class = "articleMeta"]/text()').extract()).strip())[2:]
+        article['source'] = 'TheBlock'
         return article

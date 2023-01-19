@@ -12,4 +12,5 @@ class NftscrapingItem(scrapy.Item):
     datetime_crawled = scrapy.Field()
     collection = scrapy.Field()
     datetime_posted = scrapy.Field()
+    source = scrapy.Field()
     
