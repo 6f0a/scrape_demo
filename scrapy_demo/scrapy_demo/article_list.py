@@ -1,0 +1,1 @@
+list = ['bored ape yacht club','doodles','azuki','moonbirds']
