@@ -29,7 +29,7 @@ class TheblockSpider(scrapy.Spider):
         article['url'] = response.url
         article['datetime_crawled'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         article['collection'] = collection
-        date_object = (''.join(response.xpath('//div[@class = "articleMeta"]/text()').extract()).strip())
+        date_object = (''.join(response.xpath('//div[@class = "timestamp tbcoTimestamp"]/text()').extract()).strip())
         date_object = date_object.strip('EDT')
         date_object = date_object.strip('EST')
         date_object = date_object.strip('• ')

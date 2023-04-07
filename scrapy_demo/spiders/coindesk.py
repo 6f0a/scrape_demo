@@ -21,7 +21,7 @@ class CoindeskSpider(scrapy.Spider):
         jsonresponse = response.json()['items']
         for item in jsonresponse:
             article['title'] = item['title']
-            article['url'] = 'www.coindesk.com'+ item['link']
+            article['url'] = 'https://www.coindesk.com'+ item['link']
             article['datetime_crawled'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             article['collection'] = collection
             data_object = datetime.datetime.strptime(item['pubdate'],'%b %d, %Y')
